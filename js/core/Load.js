@@ -1,0 +1,30 @@
+import { AUDIOSRC, TEXTURES } from "../main.js";
+export class Load {
+    static image(src, name) {
+        return new Promise((res, rej) => {
+            let image = new Image();
+            let loaded = false;
+            image.addEventListener("load", () => {
+                TEXTURES[name] = image;
+                loaded = true;
+                console.log(`Loaded image ${src}`);
+                res(null);
+            });
+            image.src = src;
+            setTimeout(() => {
+                if (!loaded) {
+                    console.error(`Failed to load image ${src}`);
+                    rej("Failed to load");
+                }
+            }, 5000);
+        });
+    }
+    static audio(src, name) {
+        return new Promise((res, rej) => {
+            let audio = new Audio(src);
+            AUDIOSRC[name] = src;
+            console.log(`Loaded audio ${src}`);
+            res(null);
+        });
+    }
+}
