@@ -19,6 +19,11 @@ export class Scorer extends GameObject {
     addCombo (n: number) {
         this.script.combo+=n;
     }
+
+    addPoints (n: number) {
+        this.script.score += n * this.script.combo;
+        this.script.size += 30 * n;
+    }
 }
 
 class Script extends Component {

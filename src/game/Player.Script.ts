@@ -86,6 +86,8 @@ import { Scorer } from "./Scorer.js";
                 playAudio("timeoid");
                 if (this.power < 1) {
                     this.power+= 0.1;
+                    let scorer: Scorer = <Scorer>getObjectByTag("scorer");
+                    scorer.addPoints(3);
                 }
                 Camera.shake(5);
             }
