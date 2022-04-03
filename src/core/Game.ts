@@ -11,7 +11,9 @@ export class Game {
 
     static destroyGameObject (obj: GameObject) {
         OBJECTS.splice(OBJECTS.indexOf(obj), 1);
-        collisionObjects.splice(collisionObjects.indexOf(obj), 1);
+        if (collisionObjects.includes(obj)) {
+            collisionObjects.splice(collisionObjects.indexOf(obj), 1);
+        }
     }
 
     static enableCollision (obj: GameObject) {

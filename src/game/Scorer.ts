@@ -4,6 +4,7 @@ import { playAudio } from "../core/funcs/playAudio.js";
 import { GameObject } from "../core/GameObject.js";
 import { canvas, ctx } from "../main.js";
 import { Player } from "./Player.js";
+import { scoreFormat } from "./scoreFormat.js";
 
 type ESide = "left" | "right";
 
@@ -61,12 +62,13 @@ class Script extends Component {
 
         render(): void {
             ctx.save();
-            ctx.fillStyle = "white";
+            ctx.fillStyle = "black";
             ctx.strokeStyle = "black";
             ctx.font = `${this.size}px Arial`;
-            let scoreText = `POINTS: ${this.score.toFixed(0)}`;
-            ctx.fillText(scoreText, (canvas.width / 2) - (ctx.measureText(scoreText).width / 2), 50);
-            ctx.strokeText(scoreText, (canvas.width / 2) - (ctx.measureText(scoreText).width / 2), 50);
+            let scoreText = `${scoreFormat(this.score)}`;
+            ctx.fillText(scoreText, (canvas.width - 100) - (ctx.measureText(scoreText).width / 2), 50);
+            ctx.fillStyle = "white";
+            ctx.fillText(scoreText, (canvas.width - 100) - (ctx.measureText(scoreText).width / 2), 48);
             ctx.fillStyle = "white";
             ctx.fillRect((canvas.width / 2) - 1, 0, 2, canvas.height);
             ctx.restore();

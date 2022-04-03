@@ -139,6 +139,9 @@ async function loadAssets () {
     await Load.image("assets/textures/bg.png", "bg");
     await Load.image("assets/textures/combo up.png", "combo");
     await Load.image("assets/textures/rainer.png", "rainer");
+    await Load.image("assets/textures/rectangleshard.png", "rect_sh");
+    await Load.image("assets/textures/timeoidshard.png", "timeoid_sh");
+
     await Load.audio("assets/audio/mainmusic.mp3", "main");
     await Load.audio("assets/audio/hit.mp3", "hit");
     await Load.audio("assets/audio/comboup.mp3", "combo");
@@ -158,7 +161,7 @@ function start () {
     // }
     Game.spawnGameObject(new Generator());
     Game.spawnGameObject(new Scorer());
-    Game.spawnGameObject(new Rainer(), new Vector2(0, -1000));
+    //Game.spawnGameObject(new Rainer(), new Vector2(0, -1000));
     let played = false;
     let music = new Audio(AUDIOSRC["main"]);
     music.addEventListener("ended", () => {
@@ -173,6 +176,10 @@ function start () {
         }
     });
     tick();
+
+    setInterval(() => {
+        console.log(collisionObjects);
+    }, 5000);
 }
 
 loadAssets();

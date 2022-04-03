@@ -1,11 +1,11 @@
-import { ctx, delta, TEXTURES } from "../main.js";
+import { ctx, delta, OBJECTS, TEXTURES } from "../main.js";
 import { DisplayObject } from "./DisplayObject.js";
 import { Vector2 } from "./Vector2.js";
 
 export class Sprite extends DisplayObject {
     image?: HTMLImageElement;
     motionBlur: Vector2[] = [];
-    motionBlurMax: number = 1;
+    motionBlurMax: number = 2;
     constructor() {
         super();
         this.tag = "sprite";
@@ -50,6 +50,15 @@ export class Sprite extends DisplayObject {
                 ctx.drawImage(this.image, -this.image.width / 2, -this.image.height / 2);
                 ctx.restore();
             }
+        }
+    }
+
+    update(): void {
+        if (OBJECTS.length > 40) {
+            this.motionBlurMax = 1;
+        }
+        else {
+            this.motionBlurMax = 2;
         }
     }
 

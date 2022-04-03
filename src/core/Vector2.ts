@@ -1,3 +1,5 @@
+import { rand } from "./funcs/rand.js";
+
 export class Vector2 {
     x: number;
     y: number;
@@ -25,5 +27,9 @@ export class Vector2 {
 
     clone () : Vector2 {
         return new Vector2(this.x, this.y);
+    }
+
+    static rand (min: number, max: number) : Vector2 {
+        return new Vector2(rand(min, max), rand(min, max));
     }
 }

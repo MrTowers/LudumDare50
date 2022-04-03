@@ -7,6 +7,7 @@ import { rand } from "../core/funcs/rand.js";
 import { Game } from "../core/Game.js";
 import { GameObject } from "../core/GameObject.js";
 import { Input } from "../core/Input.js";
+import { Particle } from "../core/particleSystem/Particle.js";
 import { Vector2 } from "../core/Vector2.js";
 import { canvas, delta, OBJECTS, setTimescale } from "../main.js";
 import { Timeoid } from "./pickups/Timeoid.js";
@@ -76,6 +77,19 @@ import { Scorer } from "./Scorer.js";
             this.speed += delta / 100000;
 
             this.power -= delta / 10000;
+
+            
+            let pos = this.gameObject!.getPosition();
+
+            if (this.gameObject!.getPosition().x > (canvas.width / 2) + 100) {
+                this.gameObject?.setPosition(new Vector2(-(canvas.width / 2) - 100, pos.y));
+                this.power -= 0.2;
+            }
+
+            if (this.gameObject!.getPosition().x < -(canvas.width / 2) - 100) {
+                this.gameObject?.setPosition(new Vector2((canvas.width / 2) + 100, pos.y));
+                this.power -= 0.2;
+            }
         }
 
         onstart(): void {
@@ -91,12 +105,15 @@ import { Scorer } from "./Scorer.js";
                     let scorer: Scorer = <Scorer>getObjectByTag("scorer");
                     scorer.addPoints(3);
                 }
+
+                Particle.burst(collisionObject.getPosition(), 20, "timeoid_sh", 5);
                 Camera.shake(5);
             }
             if (collisionObject.tag == "obstacle") {
                 this.power -= 0.4;
                 collisionObject.destroy();
                 playAudio("hit");
+                Particle.burst(collisionObject.getPosition(), 20, "rect_sh", 5);
                 
                 Camera.shake(29);
             }
