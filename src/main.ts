@@ -138,24 +138,36 @@ async function loadAssets () {
     await Load.image("assets/textures/bg.png", "bg");
     await Load.image("assets/textures/combo up.png", "combo");
     await Load.audio("assets/audio/mainmusic.mp3", "main");
+    await Load.audio("assets/audio/hit.mp3", "hit");
+    await Load.audio("assets/audio/comboup.mp3", "combo");
+    await Load.audio("assets/audio/timeoid.mp3", "timeoid");
+    await Load.audio("assets/audio/point.mp3", "point");
+    await Load.audio("assets/audio/music2.mp3", "music2");
     start();
 }
 
 function start () {
-    Game.spawnGameObject(new BG());
+    let bg = new BG();
+    Game.spawnGameObject(bg);
     Game.spawnGameObject(new Player())
-    for (let i = 0; i < 10; i++) { 
-        Game.spawnGameObject(new Timeoid(), new Vector2(0, -500));
-    }
+    // for (let i = 0; i < 10; i++) { 
+    //     Game.spawnGameObject(new Timeoid(), new Vector2(0, -500));
+    // }
     Game.spawnGameObject(new Generator());
     Game.spawnGameObject(new Scorer());
     let played = false;
+    let music = new Audio(AUDIOSRC["main"]);
+    music.addEventListener("ended", () => {
+        Game.destroyGameObject(bg);
+        Camera.shake(10);
+        playAudio("music2");
+    });
     document.addEventListener("keydown", () => {
         if (!played) {
-            playAudio("main");
+            music.play();
             played = true;
         }
-    })
+    });
     tick();
 }
 

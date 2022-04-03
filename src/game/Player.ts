@@ -6,6 +6,7 @@ import { PlayerScript } from "./Player.Script.js";
 import { PowerProgress } from "./PowerProgress.js";
 
     export class Player extends GameObject {
+        script: PlayerScript;
         constructor() {
             super();
             this.tag = "player";
@@ -13,8 +14,18 @@ import { PowerProgress } from "./PowerProgress.js";
             this.setScale(new Vector2(0.1, 0.1));
             this.addComponent(s);
             let pp = new PowerProgress();
-            this.addComponent(new PlayerScript(pp));
+            this.script = new PlayerScript(pp);
+            this.addComponent(this.script);
             this.addComponent(pp);
             Game.enableCollision(this);
+        }
+
+        addPower(n: number) {
+            if (this.script.power + n < 1) {
+                this.script.power+= n;
+            }
+            else {
+                this.script.power = 1;
+            }
         }
     }

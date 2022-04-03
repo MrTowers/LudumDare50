@@ -1,7 +1,9 @@
 import { Component } from "../core/Component.js";
 import { getObjectByTag } from "../core/funcs/getObjectByTag.js";
+import { playAudio } from "../core/funcs/playAudio.js";
 import { GameObject } from "../core/GameObject.js";
 import { canvas, ctx } from "../main.js";
+import { Player } from "./Player.js";
 
 type ESide = "left" | "right";
 
@@ -20,7 +22,7 @@ export class Scorer extends GameObject {
 }
 
 class Script extends Component {
-    player: GameObject;
+    player: Player;
         side: ESide = "left";
         score: number;
         size: number = 30;
@@ -29,7 +31,7 @@ class Script extends Component {
         constructor () {
             super();
             this.tag = "script";
-            this.player = getObjectByTag("player")!;
+            this.player = <Player>getObjectByTag("player")!;
             this.score = 0;
         }
 
@@ -68,5 +70,7 @@ class Script extends Component {
         switchSide () {
             this.score+= this.combo;
             this.size+= 30;
+            this.player.addPower(0.1);
+            playAudio("point", 0.5);
         }
 }

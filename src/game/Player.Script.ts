@@ -2,6 +2,7 @@ import { Camera } from "../core/Camera.js";
 import { Component } from "../core/Component.js";
 import { getObjectByTag } from "../core/funcs/getObjectByTag.js";
 import { getScreenPosition } from "../core/funcs/getScreenPosition.js";
+import { playAudio } from "../core/funcs/playAudio.js";
 import { Game } from "../core/Game.js";
 import { GameObject } from "../core/GameObject.js";
 import { Input } from "../core/Input.js";
@@ -17,6 +18,7 @@ import { Scorer } from "./Scorer.js";
         powerProgress: PowerProgress;
         power: number;
         powerTarget: number;
+        speed: number;
         constructor(powerProgress: PowerProgress) {
             super();
             this.steering = 0;
@@ -24,6 +26,7 @@ import { Scorer } from "./Scorer.js";
             this.powerProgress = powerProgress;
             this.power = 1;
             this.powerTarget = 0;
+            this.speed = 3;
         }
 
         update(): void {
@@ -59,7 +62,7 @@ import { Scorer } from "./Scorer.js";
             this.steering += -this.steering * 0.1;
             this.gameObject?.setRotation(this.steering * 2)
 
-            v.y = -3 * (delta / 10);
+            v.y = -this.speed * (delta / 10);
 
             this.gameObject?.setPosition(this.gameObject.getPosition().add(v));
             Camera.setPosition(this.gameObject?.getPosition().add(new Vector2(-this.gameObject.getPosition().x, -300))!);
@@ -67,6 +70,10 @@ import { Scorer } from "./Scorer.js";
             this.powerProgress.value = this.powerTarget;
 
             this.powerTarget += (this.power - this.powerTarget) / 10;
+
+            this.speed += delta / 100000;
+
+            this.power -= delta / 10000;
         }
 
         onstart(): void {
@@ -76,6 +83,7 @@ import { Scorer } from "./Scorer.js";
         oncollision(collisionObject: GameObject): void {
             if (collisionObject.tag == "timeoid") {
                 collisionObject.destroy();
+                playAudio("timeoid");
                 if (this.power < 1) {
                     this.power+= 0.1;
                 }
@@ -84,12 +92,14 @@ import { Scorer } from "./Scorer.js";
             if (collisionObject.tag == "obstacle") {
                 this.power -= 0.4;
                 collisionObject.destroy();
+                playAudio("hit");
                 
                 Camera.shake(29);
             }
 
             if (collisionObject.tag == "combo") {
                 collisionObject.destroy();
+                playAudio("combo");
                 let scr: Scorer = <Scorer>getObjectByTag("scorer");
                 scr.addCombo(1);
                 Camera.shake(5);

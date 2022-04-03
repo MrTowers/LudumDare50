@@ -26,7 +26,7 @@ export class OB_Hammer extends GameObject {
             }
 
             this.time += delta / 1000;
-            if (this.time >= 2) {
+            if (this.time >= 1.8) {
                 this.time = 0;
                 this.desiredPos.x = rand(-canvas.width / 2, canvas.width / 2);
             }
