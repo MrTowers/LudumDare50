@@ -41,6 +41,8 @@ export let collisionObjects: GameObject[] = [];
 
 canvas.style.backgroundColor = "black";
 
+ctx.imageSmoothingQuality = "high";
+
 document.body.style.padding = "0px";
 document.body.style.margin = "0px";
 document.body.style.overflow = "hidden";
