@@ -3,11 +3,13 @@ import { Component } from "../core/Component.js";
 import { getObjectByTag } from "../core/funcs/getObjectByTag.js";
 import { getScreenPosition } from "../core/funcs/getScreenPosition.js";
 import { playAudio } from "../core/funcs/playAudio.js";
+import { rand } from "../core/funcs/rand.js";
 import { Game } from "../core/Game.js";
 import { GameObject } from "../core/GameObject.js";
 import { Input } from "../core/Input.js";
 import { Vector2 } from "../core/Vector2.js";
-import { delta, OBJECTS, setTimescale } from "../main.js";
+import { canvas, delta, OBJECTS, setTimescale } from "../main.js";
+import { Timeoid } from "./pickups/Timeoid.js";
 import { PowerProgress } from "./PowerProgress.js";
 import { Scorer } from "./Scorer.js";
 
@@ -106,6 +108,26 @@ import { Scorer } from "./Scorer.js";
                 scr.addCombo(1);
                 Camera.shake(5);
             }
+
+            if (collisionObject.tag == "rainer") {
+                collisionObject.destroy();
+                playAudio("rainer");
+                this.rainer();
+                Camera.shake(20);
+            }
+        }
+
+        rainer () {
+            let counter = 0;
+            let intr = setInterval(() => {
+                if (counter >= 50) {
+                    clearInterval(intr);
+                }
+
+                Game.spawnGameObject(new Timeoid(), new Vector2(rand(-canvas.width, canvas.width), this.gameObject!.getPosition().y - 1000));
+
+                counter++;
+            }, 50);
         }
 
         gameOver () {

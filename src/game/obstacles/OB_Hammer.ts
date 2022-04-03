@@ -12,6 +12,7 @@ export class OB_Hammer extends GameObject {
     static Script = class extends Component {
         desiredPos: Vector2;
         time: number;
+        resetTime: number = 1.8;
         constructor () {
             super();
             this.tag = "scirpt";
@@ -26,12 +27,14 @@ export class OB_Hammer extends GameObject {
             }
 
             this.time += delta / 1000;
-            if (this.time >= 1.8) {
+            if (this.time >= this.resetTime) {
                 this.time = 0;
                 this.desiredPos.x = rand(-canvas.width / 2, canvas.width / 2);
             }
 
             this.gameObject!.transform.position.x! += clamp((this.desiredPos.x - this.gameObject!.transform.position.x), -50, 50) * (delta / 10);
+
+            this.resetTime += 0.001 * delta / 1000;
         }
     }
     constructor () {

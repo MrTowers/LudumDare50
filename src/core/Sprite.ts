@@ -5,7 +5,7 @@ import { Vector2 } from "./Vector2.js";
 export class Sprite extends DisplayObject {
     image?: HTMLImageElement;
     motionBlur: Vector2[] = [];
-    motionBlurMax: number = 2;
+    motionBlurMax: number = 1;
     constructor() {
         super();
         this.tag = "sprite";

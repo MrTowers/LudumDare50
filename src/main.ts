@@ -6,6 +6,7 @@ import { Load } from "./core/Load.js";
 import { Vector2 } from "./core/Vector2.js";
 import { BG } from "./game/BG.js";
 import { Generator } from "./game/Generator.js";
+import { Rainer } from "./game/pickups/Rainer.js";
 import { Timeoid } from "./game/pickups/Timeoid.js";
 import { Player } from "./game/Player.js";
 import { Scorer } from "./game/Scorer.js";
@@ -137,12 +138,14 @@ async function loadAssets () {
     await Load.image("assets/textures/rectangle.png", "rect");
     await Load.image("assets/textures/bg.png", "bg");
     await Load.image("assets/textures/combo up.png", "combo");
+    await Load.image("assets/textures/rainer.png", "rainer");
     await Load.audio("assets/audio/mainmusic.mp3", "main");
     await Load.audio("assets/audio/hit.mp3", "hit");
     await Load.audio("assets/audio/comboup.mp3", "combo");
     await Load.audio("assets/audio/timeoid.mp3", "timeoid");
     await Load.audio("assets/audio/point.mp3", "point");
     await Load.audio("assets/audio/music2.mp3", "music2");
+    await Load.audio("assets/audio/rainer.mp3", "rainer");
     start();
 }
 
@@ -155,6 +158,7 @@ function start () {
     // }
     Game.spawnGameObject(new Generator());
     Game.spawnGameObject(new Scorer());
+    Game.spawnGameObject(new Rainer(), new Vector2(0, -1000));
     let played = false;
     let music = new Audio(AUDIOSRC["main"]);
     music.addEventListener("ended", () => {
