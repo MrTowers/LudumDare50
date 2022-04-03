@@ -1,0 +1,722 @@
+{
+    "extension": "linecounter",
+    "version": "0.2.7",
+    "workspace": "c:\\Users\\dawid\\Desktop\\ldjam 50",
+    "linecount": [
+        {
+            "version": "0.2.7",
+            "counttime": "2022-04-02 11:28:06",
+            "filesum": 51,
+            "codesum": 1226,
+            "commentsum": 61,
+            "blanksum": 125,
+            "statistics": {
+                ".js": {
+                    "code": 615,
+                    "comment": 4,
+                    "blank": 0
+                },
+                ".ts": {
+                    "code": 583,
+                    "comment": 4,
+                    "blank": 115
+                },
+                ".html": {
+                    "code": 12,
+                    "comment": 0,
+                    "blank": 3
+                },
+                ".json": {
+                    "code": 12,
+                    "comment": 53,
+                    "blank": 7
+                },
+                ".txt": {
+                    "code": 4,
+                    "comment": 0,
+                    "blank": 0
+                }
+            },
+            "filelist": [
+                {
+                    "filename": "assets\\textures\\player.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets\\textures\\timeoid.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "index.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "js\\core\\Camera.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 1,
+                    "filename": "js\\core\\Component.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "js\\core\\DisplayObject.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "js\\core\\funcs\\getObjectByTag.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "js\\core\\funcs\\getScreenLocation.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "js\\core\\funcs\\getScreenPosition.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "js\\core\\funcs\\rand.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "js\\core\\Game.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 69,
+                    "comment": 0,
+                    "filename": "js\\core\\GameObject.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "js\\core\\Input.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 33,
+                    "comment": 0,
+                    "filename": "js\\core\\Load.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "js\\core\\Particle.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "js\\core\\ParticleSystem.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "js\\core\\ParticleSystem\\Particle.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "js\\core\\ParticleSystem\\ParticleSystem.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "js\\core\\Rotator.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 54,
+                    "comment": 2,
+                    "filename": "js\\core\\Sprite.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "js\\core\\Time.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "js\\core\\Transform.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "js\\core\\Vector2.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "js\\game\\Generator.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "js\\game\\pickups\\Timeoid.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "js\\game\\Player.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 56,
+                    "comment": 0,
+                    "filename": "js\\game\\Player.Script.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "js\\game\\PowerProgress.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 113,
+                    "comment": 1,
+                    "filename": "js\\main.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "pomysl.txt"
+                },
+                {
+                    "blank": 7,
+                    "code": 31,
+                    "comment": 0,
+                    "filename": "src\\core\\Camera.ts"
+                },
+                {
+                    "blank": 13,
+                    "code": 18,
+                    "comment": 1,
+                    "filename": "src\\core\\Component.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "src\\core\\DisplayObject.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "src\\core\\funcs\\getObjectByTag.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src\\core\\funcs\\getScreenPosition.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\core\\funcs\\rand.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "src\\core\\Game.ts"
+                },
+                {
+                    "blank": 17,
+                    "code": 74,
+                    "comment": 0,
+                    "filename": "src\\core\\GameObject.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "src\\core\\Input.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 33,
+                    "comment": 0,
+                    "filename": "src\\core\\Load.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "src\\core\\Rotator.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 56,
+                    "comment": 2,
+                    "filename": "src\\core\\Sprite.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "src\\core\\Transform.ts"
+                },
+                {
+                    "blank": 6,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "src\\core\\Vector2.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "src\\game\\Generator.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "src\\game\\pickups\\Timeoid.ts"
+                },
+                {
+                    "blank": 13,
+                    "code": 64,
+                    "comment": 0,
+                    "filename": "src\\game\\Player.Script.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "src\\game\\Player.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "src\\game\\PowerProgress.ts"
+                },
+                {
+                    "blank": 24,
+                    "code": 114,
+                    "comment": 1,
+                    "filename": "src\\main.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 12,
+                    "comment": 53,
+                    "filename": "tsconfig.json"
+                }
+            ]
+        },
+        {
+            "version": "0.2.7",
+            "counttime": "2022-04-02 12:15:55",
+            "filesum": 55,
+            "codesum": 1317,
+            "commentsum": 63,
+            "blanksum": 131,
+            "statistics": {
+                ".html": {
+                    "code": 12,
+                    "comment": 0,
+                    "blank": 3
+                },
+                ".txt": {
+                    "code": 4,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".json": {
+                    "code": 12,
+                    "comment": 53,
+                    "blank": 7
+                },
+                ".js": {
+                    "code": 661,
+                    "comment": 5,
+                    "blank": 0
+                },
+                ".ts": {
+                    "code": 628,
+                    "comment": 5,
+                    "blank": 121
+                }
+            },
+            "filelist": [
+                {
+                    "filename": "assets\\textures\\player.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets\\textures\\rectangle.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "assets\\textures\\timeoid.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "index.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "js\\core\\Camera.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 1,
+                    "filename": "js\\core\\Component.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "js\\core\\DisplayObject.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "js\\core\\funcs\\getObjectByTag.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "js\\core\\funcs\\getScreenLocation.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "js\\core\\funcs\\getScreenPosition.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "js\\core\\funcs\\rand.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "js\\core\\Game.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 69,
+                    "comment": 0,
+                    "filename": "js\\core\\GameObject.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "js\\core\\Input.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 33,
+                    "comment": 0,
+                    "filename": "js\\core\\Load.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "js\\core\\Particle.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "js\\core\\ParticleSystem.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "js\\core\\ParticleSystem\\Particle.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "js\\core\\ParticleSystem\\ParticleSystem.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "js\\core\\Rectangle.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "js\\core\\Rotator.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 54,
+                    "comment": 2,
+                    "filename": "js\\core\\Sprite.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "js\\core\\Time.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "js\\core\\Transform.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "js\\core\\Vector2.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 31,
+                    "comment": 1,
+                    "filename": "js\\game\\Generator.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "js\\game\\obstacles\\OB_Static.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "js\\game\\pickups\\Timeoid.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "js\\game\\Player.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 56,
+                    "comment": 0,
+                    "filename": "js\\game\\Player.Script.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "js\\game\\PowerProgress.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 114,
+                    "comment": 1,
+                    "filename": "js\\main.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "pomysl.txt"
+                },
+                {
+                    "blank": 7,
+                    "code": 31,
+                    "comment": 0,
+                    "filename": "src\\core\\Camera.ts"
+                },
+                {
+                    "blank": 13,
+                    "code": 18,
+                    "comment": 1,
+                    "filename": "src\\core\\Component.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "src\\core\\DisplayObject.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "src\\core\\funcs\\getObjectByTag.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src\\core\\funcs\\getScreenPosition.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\core\\funcs\\rand.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "src\\core\\Game.ts"
+                },
+                {
+                    "blank": 17,
+                    "code": 74,
+                    "comment": 0,
+                    "filename": "src\\core\\GameObject.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "src\\core\\Input.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 33,
+                    "comment": 0,
+                    "filename": "src\\core\\Load.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "src\\core\\Rotator.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 56,
+                    "comment": 2,
+                    "filename": "src\\core\\Sprite.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "src\\core\\Transform.ts"
+                },
+                {
+                    "blank": 6,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "src\\core\\Vector2.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 32,
+                    "comment": 1,
+                    "filename": "src\\game\\Generator.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "src\\game\\obstacles\\OB_Static.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "src\\game\\pickups\\Timeoid.ts"
+                },
+                {
+                    "blank": 13,
+                    "code": 64,
+                    "comment": 0,
+                    "filename": "src\\game\\Player.Script.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "src\\game\\Player.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "src\\game\\PowerProgress.ts"
+                },
+                {
+                    "blank": 24,
+                    "code": 115,
+                    "comment": 1,
+                    "filename": "src\\main.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 12,
+                    "comment": 53,
+                    "filename": "tsconfig.json"
+                }
+            ]
+        }
+    ]
+}
