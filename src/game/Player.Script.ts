@@ -43,19 +43,20 @@ import { Scorer } from "./Scorer.js";
                 this.steering += this.steeringSpeed;
             }
 
-            if (Input.getKey(" ")) {
-                if (this.power > 0) {
-                    this.power -= delta / 1000;
-                    setTimescale(0.2);
-                }
-                else {
-                    this.power = 0;
-                    setTimescale(1);
-                }
-            }
-            else {
-                setTimescale(1);
-            }
+            //spacebar
+            // if (Input.getKey(" ")) {
+            //     if (this.power > 0) {
+            //         this.power -= delta / 1000;
+            //         setTimescale(0.2);
+            //     }
+            //     else {
+            //         this.power = 0;
+            //         setTimescale(1);
+            //     }
+            // }
+            // else {
+            //     setTimescale(1);
+            // }
 
             if (this.power <= 0) {
                 this.gameOver();
@@ -150,5 +151,7 @@ import { Scorer } from "./Scorer.js";
         gameOver () {
             Camera.shake(0);
             setTimescale(0);
+            let scr: Scorer = <Scorer>getObjectByTag("scorer");
+            scr.script.saveBestScore();
         }
     }

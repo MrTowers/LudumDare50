@@ -69,6 +69,11 @@ class Script extends Component {
             ctx.fillText(scoreText, (canvas.width - 100) - (ctx.measureText(scoreText).width / 2), 50);
             ctx.fillStyle = "white";
             ctx.fillText(scoreText, (canvas.width - 100) - (ctx.measureText(scoreText).width / 2), 48);
+            ctx.fillStyle = "black";
+            let hsText = `BEST ${scoreFormat(Number(localStorage.getItem("timeoid_hs")))}`;
+            ctx.fillText(hsText, canvas.width - 143 - (ctx.measureText(hsText).width / 2), 80);
+            ctx.fillStyle = "white";
+            ctx.fillText(hsText, canvas.width - 143 - (ctx.measureText(hsText).width / 2), 78);
             ctx.fillStyle = "white";
             ctx.fillRect((canvas.width / 2) - 1, 0, 2, canvas.height);
             ctx.restore();
@@ -79,5 +84,16 @@ class Script extends Component {
             this.size+= 30;
             this.player.addPower(0.1);
             playAudio("point", 0.5);
+        }
+
+        saveBestScore () {
+            let highscore = Number(localStorage.getItem("timeoid_hs"));
+            if (highscore == null || isNaN(highscore)) {
+                localStorage.setItem("timeoid_hs", Number(0).toString());
+                this.saveBestScore();
+            }
+            if (this.score > highscore) {
+                localStorage.setItem("timeoid_hs", this.score.toString());
+            }
         }
 }
