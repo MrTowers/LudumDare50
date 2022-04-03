@@ -1,3 +1,4 @@
 out/
 ignore/
 js/
+node_modules/
