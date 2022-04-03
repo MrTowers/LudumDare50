@@ -37,7 +37,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "ldjam50"
+            "name": "ldjam_50"
           }
         },
         {
