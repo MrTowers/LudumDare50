@@ -23,13 +23,10 @@ export class Load {
 
     static audio (src: string, name: string) {
         return new Promise((res, rej) => {
-            let audio = new Audio();
-            audio.addEventListener("load", () => {
-                AUDIOSRC[name] = src;
-                console.log(`Loaded audio ${src}`);
-                res(null);
-            });
-            audio.src = src;
+            let audio = new Audio(src);
+            AUDIOSRC[name] = src;
+            console.log(`Loaded audio ${src}`);
+            res(null);
         });
     }
 }

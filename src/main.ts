@@ -1,4 +1,5 @@
 import { Camera } from "./core/Camera.js";
+import { playAudio } from "./core/funcs/playAudio.js";
 import { Game } from "./core/Game.js";
 import { GameObject } from "./core/GameObject.js";
 import { Load } from "./core/Load.js";
@@ -136,6 +137,7 @@ async function loadAssets () {
     await Load.image("assets/textures/rectangle.png", "rect");
     await Load.image("assets/textures/bg.png", "bg");
     await Load.image("assets/textures/combo up.png", "combo");
+    await Load.audio("assets/audio/mainmusic.mp3", "main");
     start();
 }
 
@@ -147,6 +149,13 @@ function start () {
     }
     Game.spawnGameObject(new Generator());
     Game.spawnGameObject(new Scorer());
+    let played = false;
+    document.addEventListener("keydown", () => {
+        if (!played) {
+            playAudio("main");
+            played = true;
+        }
+    })
     tick();
 }
 
