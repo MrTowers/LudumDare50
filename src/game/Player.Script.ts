@@ -9,7 +9,7 @@ import { GameObject } from "../core/GameObject.js";
 import { Input } from "../core/Input.js";
 import { Particle } from "../core/particleSystem/Particle.js";
 import { Vector2 } from "../core/Vector2.js";
-import { canvas, delta, OBJECTS, setTimescale } from "../main.js";
+import { canvas, delta, OBJECTS, setTimescale, UI } from "../main.js";
 import { Timeoid } from "./pickups/Timeoid.js";
 import { PowerProgress } from "./PowerProgress.js";
 import { Scorer } from "./Scorer.js";
@@ -22,6 +22,7 @@ import { Scorer } from "./Scorer.js";
         power: number;
         powerTarget: number;
         speed: number;
+        gameover: boolean = false;
         constructor(powerProgress: PowerProgress) {
             super();
             this.steering = 0;
@@ -42,21 +43,6 @@ import { Scorer } from "./Scorer.js";
             if (Input.getKey("d") || Input.getKey("ArrowRight")) {
                 this.steering += this.steeringSpeed;
             }
-
-            //spacebar
-            // if (Input.getKey(" ")) {
-            //     if (this.power > 0) {
-            //         this.power -= delta / 1000;
-            //         setTimescale(0.2);
-            //     }
-            //     else {
-            //         this.power = 0;
-            //         setTimescale(1);
-            //     }
-            // }
-            // else {
-            //     setTimescale(1);
-            // }
 
             if (this.power <= 0) {
                 this.gameOver();
@@ -153,5 +139,7 @@ import { Scorer } from "./Scorer.js";
             setTimescale(0);
             let scr: Scorer = <Scorer>getObjectByTag("scorer");
             scr.script.saveBestScore();
+            this.gameover = true;
+            UI.gameover!.style.visibility = "visible";
         }
     }

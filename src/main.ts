@@ -14,6 +14,10 @@ import { Scorer } from "./game/Scorer.js";
 export const canvas = document.createElement("canvas")!;
 export const ctx = canvas.getContext("2d")!;
 
+export const UI = {
+    gameover: document.getElementById("gameover")
+}
+
 export const TEXTURES: any = {};
 export const AUDIOSRC: any = {};
 export let OBJECTS: GameObject[] = [];
@@ -65,6 +69,12 @@ function calcDelta () {
 
 export function setTimescale (n: number) {
     timescale = n;
+}
+
+export function restartScene () {
+    OBJECTS = [];
+    UI.gameover!.style.visibility = "hidden";
+    start();
 }
 
 function tick () {
@@ -122,14 +132,14 @@ function render () {
     for (let i in OBJECTS) {
         OBJECTS[i].render();
     }
-    ctx.save();
-    ctx.fillStyle = "white";
-    ctx.fillText(`FPS: ${(1000 / delta).toFixed(0)}`, 3, 10);
-    ctx.fillText(`update time: ${updateTime.acc.toFixed(0)}ms`, 3, 20);
-    ctx.fillText(`collisions time: ${collTime.acc.toFixed(0)}ms`, 3, 30);
-    ctx.fillText(`render time: ${renderTime.acc.toFixed(0)}ms`, 3, 40);
-    ctx.fillText(`objects count: ${OBJECTS.length}`, 3, 50);
-    ctx.restore();
+    // ctx.save();
+    // ctx.fillStyle = "white";
+    // ctx.fillText(`FPS: ${(1000 / delta).toFixed(0)}`, 3, 10);
+    // ctx.fillText(`update time: ${updateTime.acc.toFixed(0)}ms`, 3, 20);
+    // ctx.fillText(`collisions time: ${collTime.acc.toFixed(0)}ms`, 3, 30);
+    // ctx.fillText(`render time: ${renderTime.acc.toFixed(0)}ms`, 3, 40);
+    // ctx.fillText(`objects count: ${OBJECTS.length}`, 3, 50);
+    // ctx.restore();
 }
 
 async function loadAssets () {
@@ -167,7 +177,11 @@ function start () {
     music.addEventListener("ended", () => {
         Game.destroyGameObject(bg);
         Camera.shake(10);
-        playAudio("music2");
+        let music2 = new Audio(AUDIOSRC["music2"]);
+        music2.play();
+        music2.addEventListener("ended", () => {
+            music2.play();
+        });
     });
     document.addEventListener("keydown", () => {
         if (!played) {

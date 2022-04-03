@@ -1,4 +1,4 @@
-import { collisionObjects, OBJECTS } from "../main.js";
+import { collisionObjects, OBJECTS, restartScene } from "../main.js";
 import { GameObject } from "./GameObject.js";
 import { Vector2 } from "./Vector2.js";
 
