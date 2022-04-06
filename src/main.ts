@@ -1,5 +1,4 @@
 import { Camera } from "./core/Camera.js";
-import { playAudio } from "./core/funcs/playAudio.js";
 import { Game } from "./core/Game.js";
 import { GameObject } from "./core/GameObject.js";
 import { Load } from "./core/Load.js";
@@ -7,7 +6,6 @@ import { Vector2 } from "./core/Vector2.js";
 import { BG } from "./game/BG.js";
 import { Generator } from "./game/Generator.js";
 import { Rainer } from "./game/pickups/Rainer.js";
-import { Timeoid } from "./game/pickups/Timeoid.js";
 import { Player } from "./game/Player.js";
 import { Scorer } from "./game/Scorer.js";
 
@@ -174,10 +172,12 @@ function start () {
     //Game.spawnGameObject(new Rainer(), new Vector2(0, -1000));
     let played = false;
     let music = new Audio(AUDIOSRC["main"]);
+    music.volume = 0.5;
     music.addEventListener("ended", () => {
         Game.destroyGameObject(bg);
         Camera.shake(10);
         let music2 = new Audio(AUDIOSRC["music2"]);
+        music2.volume = 0.5;
         music2.play();
         music2.addEventListener("ended", () => {
             music2.play();

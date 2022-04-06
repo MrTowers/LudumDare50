@@ -38,7 +38,7 @@ export class Generator extends GameObject {
                     Game.spawnGameObject(new ComboUp(), new Vector2(rand(-canvas.width, canvas.width), plpos.y -1000));
                 }
 
-                if (Math.random() < 0.001) {
+                if (Math.random() < 0.01) {
                     Game.spawnGameObject(new Rainer(), new Vector2(rand(-canvas.width, canvas.width), plpos.y -1000));
                 }
                 this.time = 0;

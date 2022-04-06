@@ -44,6 +44,12 @@ import { Scorer } from "./Scorer.js";
                 this.steering += this.steeringSpeed;
             }
 
+            if (Input.getKey(" ")) {
+                if (this.gameover) {
+                    open("./index.html", "_self");
+                }
+            }
+
             if (this.power <= 0) {
                 this.gameOver();
             }

@@ -34,7 +34,7 @@ export class OB_Hammer extends GameObject {
 
             this.gameObject!.transform.position.x! += clamp((this.desiredPos.x - this.gameObject!.transform.position.x), -50, 50) * (delta / 10);
 
-            this.resetTime += 0.004 * delta / 1000;
+            this.resetTime += 0.008 * delta / 1000;
         }
     }
     constructor () {

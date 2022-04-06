@@ -11,7 +11,7 @@ import { PowerProgress } from "./PowerProgress.js";
             super();
             this.tag = "player";
             let s = Sprite.from("player");
-            this.setScale(new Vector2(0.1, 0.1));
+            this.setScale(new Vector2(0.075, 0.1));
             this.addComponent(s);
             let pp = new PowerProgress();
             this.script = new PlayerScript(pp);
