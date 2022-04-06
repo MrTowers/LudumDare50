@@ -169,13 +169,15 @@ function start () {
     // }
     Game.spawnGameObject(new Generator());
     Game.spawnGameObject(new Scorer());
-    Game.spawnGameObject(new Rainer(), new Vector2(0, -1000));
+    //Game.spawnGameObject(new Rainer(), new Vector2(0, -1000));
     let played = false;
     let music = new Audio(AUDIOSRC["main"]);
+    music.volume = 0.5;
     music.addEventListener("ended", () => {
         Game.destroyGameObject(bg);
         Camera.shake(10);
         let music2 = new Audio(AUDIOSRC["music2"]);
+        music2.volume = 0.5;
         music2.play();
         music2.addEventListener("ended", () => {
             music2.play();
